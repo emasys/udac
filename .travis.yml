@@ -15,16 +15,16 @@ before_script:
 
 script:
   - docker --version # print the version for logging
-  - docker build -t udagram-reverseproxy/reverseproxy .
+  - docker build -t reverseproxy ./udagram-reverseproxy
   - docker tag reverseproxy emasys/reverseproxy:latest
 
-  - docker build -t udagram-api-feed/udagram-api-feed .
+  - docker build -t udagram-api-feed ./udagram-api-feed
   - docker tag udagram-api-feed emasys/udagram-api-feed:latest
 
-  - docker build -t udagram-api-user/udagram-api-user .
+  - docker build -t udagram-api-user ./udagram-api-user
   - docker tag udagram-api-user emasys/udagram-api-user:latest
 
-  - docker build -t udagram-frontend/udagram-frontend .
+  - docker build -t udagram-frontend ./udagram-frontend
   - docker tag udagram-frontend emasys/udagram-frontend:latest
 
 after_success:
